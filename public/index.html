@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EarnBack – Add Expense</title>
+</head>
+<body>
+  <h1>EarnBack – Add Expense</h1>
+
+  <form id="expenseForm">
+    <label>Who paid?</label><br>
+    <input type="text" id="payer" required><br><br>
+
+    <label>What was it for?</label><br>
+    <input type="text" id="description" required><br><br>
+
+    <label>Amount ($)</label><br>
+    <input type="number" id="amount" required><br><br>
+
+    <label>Split with (comma separated names)</label><br>
+    <input type="text" id="splitWith" placeholder="e.g., Kevin, Archy"><br><br>
+
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
