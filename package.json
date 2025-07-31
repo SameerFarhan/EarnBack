@@ -1,0 +1,24 @@
+{
+  "name": "earnback",
+  "version": "1.0.0",
+  "description": "Expense tracker with gamified cashback system for students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SameerFarhan/EarnBack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SameerFarhan/EarnBack/issues"
+  },
+  "homepage": "https://github.com/SameerFarhan/EarnBack#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  }
+}
