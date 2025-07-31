@@ -7,5 +7,27 @@
       ""
     ],
     "timestamp": 1753924955425
+  },
+  {
+    "payer": "d",
+    "description": "d",
+    "amount": 3,
+    "splitWith": [
+      "a",
+      "a",
+      "ax"
+    ],
+    "timestamp": 1753925285321
+  },
+  {
+    "payer": "d",
+    "description": "d",
+    "amount": 3,
+    "splitWith": [
+      "a",
+      "b",
+      "c"
+    ],
+    "timestamp": 1753925421680
   }
 ]

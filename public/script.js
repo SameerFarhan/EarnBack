@@ -19,3 +19,17 @@ document.getElementById('expenseForm').addEventListener('submit', async function
   const result = await res.json();
   document.getElementById('result').innerText = result.message;
 });
+async function loadExpenses() {
+  const res = await fetch('/api/expenses');
+  const expenses = await res.json();
+
+  const list = document.getElementById('expenseList');
+  list.innerHTML = '';
+
+  expenses.forEach(exp => {
+    const item = document.createElement('li');
+    item.innerText = `${exp.payer} paid $${exp.amount.toFixed(2)} for "${exp.description}" (split with: ${exp.splitWith.join(', ')})`;
+    list.appendChild(item);
+  });
+}
+window.onload = loadExpenses;

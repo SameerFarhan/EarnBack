@@ -18,10 +18,14 @@
     <input type="number" id="amount" required><br><br>
 
     <label>Split with (comma separated names)</label><br>
-    <input type="text" id="splitWith" placeholder="e.g., Kevin, Archy"><br><br>
+    <input type="text" id="splitWith" placeholder="e.g., names of people"><br><br>
 
     <button type="submit">Add Expense</button>
   </form>
+<hr>
+<h2>All Expenses</h2>
+<button onclick="loadExpenses()">Refresh List</button>
+<ul id="expenseList"></ul>
 
   <p id="result"></p>
 

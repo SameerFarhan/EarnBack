@@ -22,5 +22,14 @@ router.post('/', (req, res) => {
 
   res.json({ message: 'Expense added successfully!' });
 });
+// GET all expenses
+router.get('/', (req, res) => {
+  if (!fs.existsSync(dataPath)) {
+    return res.json([]);
+  }
+
+  const data = JSON.parse(fs.readFileSync(dataPath));
+  res.json(data);
+});
 
 module.exports = router;
