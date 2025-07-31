@@ -49,3 +49,20 @@ async function loadBalances() {
   }
 }
 
+document.getElementById('expenseForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // existing code ...
+
+  document.getElementById('result').innerText = result.message;
+
+  // Clear form
+  this.reset();
+
+  // Refresh lists automatically
+  loadExpenses();
+  loadBalances();
+
+  // Smooth scroll to result message
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+});

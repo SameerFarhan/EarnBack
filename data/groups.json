@@ -9,5 +9,16 @@
       "friend 3"
     ],
     "timestamp": 1753926838570
+  },
+  {
+    "payer": "friend1",
+    "description": "taxi",
+    "amount": 20,
+    "splitWith": [
+      "Sameer",
+      "friend2",
+      "friend 3"
+    ],
+    "timestamp": 1753927150126
   }
 ]
