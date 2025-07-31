@@ -33,3 +33,19 @@ async function loadExpenses() {
   });
 }
 window.onload = loadExpenses;
+
+async function loadBalances() {
+  const res = await fetch('/api/expenses/balances');
+  const balances = await res.json();
+
+  const list = document.getElementById('balanceList');
+  list.innerHTML = '';
+
+  for (const [name, amount] of Object.entries(balances)) {
+    const item = document.createElement('li');
+    const rounded = amount.toFixed(2);
+    item.innerText = `${name}: ${rounded >= 0 ? "is owed" : "owes"} $${Math.abs(rounded)}`;
+    list.appendChild(item);
+  }
+}
+

@@ -1,33 +1,13 @@
 [
   {
-    "payer": "d",
-    "description": "d",
-    "amount": 3,
+    "payer": "sameer",
+    "description": "dinner",
+    "amount": 600,
     "splitWith": [
-      ""
+      "friend1",
+      "friend2",
+      "friend 3"
     ],
-    "timestamp": 1753924955425
-  },
-  {
-    "payer": "d",
-    "description": "d",
-    "amount": 3,
-    "splitWith": [
-      "a",
-      "a",
-      "ax"
-    ],
-    "timestamp": 1753925285321
-  },
-  {
-    "payer": "d",
-    "description": "d",
-    "amount": 3,
-    "splitWith": [
-      "a",
-      "b",
-      "c"
-    ],
-    "timestamp": 1753925421680
+    "timestamp": 1753926838570
   }
 ]

@@ -33,3 +33,26 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
+// Calculate balances between users
+router.get('/balances', (req, res) => {
+  if (!fs.existsSync(dataPath)) return res.json({});
+
+  const expenses = JSON.parse(fs.readFileSync(dataPath));
+  const balances = {};
+
+  expenses.forEach(exp => {
+    const people = [exp.payer, ...exp.splitWith];
+    const share = exp.amount / people.length;
+
+    people.forEach(person => {
+      if (!balances[person]) balances[person] = 0;
+    });
+
+    exp.splitWith.forEach(owes => {
+      balances[owes] -= share;
+      balances[exp.payer] += share;
+    });
+  });
+
+  res.json(balances);
+});
