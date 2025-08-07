@@ -18,7 +18,18 @@ document.getElementById('expenseForm').addEventListener('submit', async function
 
   const result = await res.json();
   document.getElementById('result').innerText = result.message;
+
+  // Clear form
+  this.reset();
+
+  // Refresh lists automatically
+  loadExpenses();
+  loadBalances();
+
+  // Smooth scroll to result message
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
 });
+
 async function loadExpenses() {
   const res = await fetch('/api/expenses');
   const expenses = await res.json();
@@ -29,9 +40,21 @@ async function loadExpenses() {
   expenses.forEach(exp => {
     const item = document.createElement('li');
     item.innerText = `${exp.payer} paid $${exp.amount.toFixed(2)} for "${exp.description}" (split with: ${exp.splitWith.join(', ')})`;
+
+    // Add delete button
+    const delBtn = document.createElement('button');
+    delBtn.innerText = 'Delete';
+    delBtn.onclick = async () => {
+      await fetch(`/api/expenses/${exp.id}`, { method: 'DELETE' });
+      loadExpenses(); // Refresh list
+      loadBalances(); // Refresh balances
+    };
+
+    item.appendChild(delBtn);
     list.appendChild(item);
   });
 }
+
 window.onload = loadExpenses;
 
 async function loadBalances() {
@@ -48,21 +71,3 @@ async function loadBalances() {
     list.appendChild(item);
   }
 }
-
-document.getElementById('expenseForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  // existing code ...
-
-  document.getElementById('result').innerText = result.message;
-
-  // Clear form
-  this.reset();
-
-  // Refresh lists automatically
-  loadExpenses();
-  loadBalances();
-
-  // Smooth scroll to result message
-  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
-});

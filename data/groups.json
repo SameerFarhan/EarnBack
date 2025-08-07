@@ -1,24 +1,35 @@
 [
   {
     "payer": "sameer",
-    "description": "dinner",
-    "amount": 600,
+    "description": "water",
+    "amount": 10000,
     "splitWith": [
       "friend1",
       "friend2",
       "friend 3"
     ],
-    "timestamp": 1753926838570
+    "timestamp": 1754530599929
   },
   {
-    "payer": "friend1",
-    "description": "taxi",
-    "amount": 20,
+    "payer": "sameer",
+    "description": "dinner",
+    "amount": 232,
     "splitWith": [
-      "Sameer",
+      "friend1",
       "friend2",
       "friend 3"
     ],
-    "timestamp": 1753927150126
+    "timestamp": 1754530791147
+  },
+  {
+    "payer": "friend1",
+    "description": "dinner",
+    "amount": 1232,
+    "splitWith": [
+      "friend1",
+      "friend2",
+      "friend 3"
+    ],
+    "timestamp": 1754530872017
   }
 ]
