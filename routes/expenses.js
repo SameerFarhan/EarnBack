@@ -88,3 +88,25 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
+router.put('/:id', (req, res) => {
+  if (!fs.existsSync(dataPath)) return res.status(404).json({ error: 'No data found' });
+
+  const expenses = JSON.parse(fs.readFileSync(dataPath));
+  const idx = expenses.findIndex(exp => exp.id === req.params.id);
+
+  if (idx === -1) {
+    return res.status(404).json({ error: 'Expense not found' });
+  }
+
+  // Update expense fields
+  expenses[idx] = {
+    ...expenses[idx],
+    ...req.body,
+    id: req.params.id,          // Ensure id stays the same
+    timestamp: Date.now()       // Update timestamp if you want
+  };
+
+  fs.writeFileSync(dataPath, JSON.stringify(expenses, null, 2));
+
+  res.json({ message: 'Expense updated successfully!' });
+});

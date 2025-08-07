@@ -31,5 +31,38 @@
       "friend 3"
     ],
     "timestamp": 1754530872017
+  },
+  {
+    "payer": "sameer",
+    "description": "water",
+    "amount": 32,
+    "splitWith": [
+      "friend1",
+      "friend2",
+      "friend 3"
+    ],
+    "timestamp": 1754531209520
+  },
+  {
+    "payer": "sameer",
+    "description": "dinner",
+    "amount": 12,
+    "splitWith": [
+      "friend1",
+      "friend2",
+      "friend 3"
+    ],
+    "timestamp": 1754531219193
+  },
+  {
+    "payer": "sameer",
+    "description": "water",
+    "amount": 10,
+    "splitWith": [
+      "friend1",
+      "friend2",
+      "friend 3"
+    ],
+    "timestamp": 1754531230932
   }
 ]
